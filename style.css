@@ -6,13 +6,14 @@ body{
 	
 	padding: 0;
 	margin: 0;
-	
+	background-image: url("img/holiday.jpg");
 	font-family: 'Oxygen', sans-serif;
 	background-size: %100 %100;
 }
 #social{
-	background-color: black;
-	color: white;
+	background-color: #dddddd;
+	opacity: 0.8;
+	color: black;
 	height: 50px;
 	width: 100%;
 	position: sticky;
@@ -21,16 +22,22 @@ body{
 	font-size: 18px;
 	text-align: right;
 	padding: 15px;
+	
 }
 font{
 float: left;
 }
 
-#social>i{
+#social>a{
+	color: black;
+	margin-right: 15px;
+}
+
+#social>a>i{
 	margin-right: 15px;
 
 }
-#social>i:hover{
+#social>a>i:hover{
 	opacity: 0.8;
 }
 
@@ -50,6 +57,17 @@ header{
 	margin-bottom: 5px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	
+
+}
+h1{
+	text-align: center;
+	background-color: black;
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 10px;
+	border-radius: 10px;
 
 }
 
@@ -61,6 +79,7 @@ header{
 	opacity: 0.8;
 }
 
+
 #centered{
 	position: absolute;
 	top: 50%;
@@ -70,7 +89,9 @@ header{
 section{
 	width: 100%;
 	height: auto;
-	background-color: #f1f1f1;
+	background-color:#dddddd;
+	opacity: 0.8;
+	color: black;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px; 
 	margin-top: 15px;
@@ -89,6 +110,7 @@ nav ul{
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	margin-left: 10px;
 }
 
 nav ul li{
@@ -119,12 +141,80 @@ main{
 	padding: 10px;
 }
 main form{
-	display: inline-block;
+	display: inline-flex;
+	margin-left: 10px;
+	margin-right: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	margin-right: 10px;
-	margin-left: 10px;
+	float: right;
+	align-items: left;
 	height: auto;
 	width: auto;
+	padding-right: 5px;
+	padding-left: 5px;
 	
+}
+main form label{
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+main button{
+	display: inline-flex;
+	float: right;
+	align-items: flex-end;
+}
+
+footer{
+	background-color: #dddddd;
+	opacity: 0.8;
+	color: black;
+	height: 50px;
+	width: 100%;
+	position: relative;
+	top:10px;
+	z-index: 9999;
+	font-size: 18px;
+	text-align: center;
+	padding: 15px;
+}
+#About{
+	background-color:#dddddd;
+	opacity: 0.8;
+	padding: 50px;
+	text-align: center;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+h3{
+	font-size: 55px;
+	font-family: 'Oxygen', sans-serif;
+}
+#sol{
+	float:left;
+	border-right: 3px solid black;
+	width: 50%;
+}
+#h5sol{
+	line-height: 1.6;
+	font-size: 20px;
+}
+#h5sol, #sag{
+	margin: 0;
+	padding: 0;
+
+}
+span{
+	font-size: 45px;
+	margin-right: 7px;
+	line-height: 40px;
+	color: black;
+	float: left;
+}
+#sag{
+	float: right;
+	width: 50%;
+	text-align: left;
+
 }
