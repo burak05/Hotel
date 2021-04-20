@@ -13,12 +13,13 @@
 
 </style>
 </head>
+
 <body>
   <div id = "container">
 <div id = "social">
   <font>Hotel Manager</font>
   <a href="index.html"><i class="fas fa-home"></i>HomePage</a>
-    <a href="index.html"><i class="fas fa-images"></i>Rooms</a>
+    <a href="gallery.html"><i class="fas fa-images"></i>Gallery</a>
     <a href="#About"> <i class="fas fa-users"></i>About</a>
     <a href="index.html"> <i class="fas fa-address-book"></i>Contact Us</a>
     <a href="index.html"> <i class="fas fa-sign-in-alt"></i>Sign In</a>
@@ -28,9 +29,11 @@
   <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
 
 </div>
+ <header>
+   <img id="headerpic" src="img/header.jpg" alt="">
+ </header>
 
-
-  
+ 
   
 
   <section>
@@ -40,25 +43,30 @@
     <main>
 
       
-      <form action="#">
-        <label for="adults">Adults: </label>
-        <input id="adults" type="text" name="adults">
+        <form action="#">
+          <label for="adults">Adults: </label>
+          <input id="adults" type="text" name="adults">
+        
+        
+          <label for="children">Children: </label>
+          <input id="children" type="text" name="children">
+       
+        
+          <label for="rooms">Rooms: </label>
+          <input id="children" type="text" name="children">
+        </form>
       
       
-        <label for="children">Children: </label>
-        <input id="children" type="text" name="children">
-     
+        <form action="#">
+          <label for="datein">Check-in Date: </label>
+          <input id="datein" type="date" >
+        
+          <label for="dateout">Check-out Date: </label>
+          <input id="dateout" type="date" >
+        </form>
+        <input type="submit" value="Submit">
       
-        <label for="rooms">Rooms: </label>
-        <input id="children" type="text" name="children">
-      </form>
-      <form action="#">
-        <label for="datein">Check-in Date: </label>
-        <input id="datein" type="date" >
       
-        <label for="dateout">Check-out Date: </label>
-        <input id="dateout" type="date" >
-      </form>
       
 
       
@@ -68,6 +76,69 @@
 
     
   </section>
+
+  <section>
+  <h1>Contact Us</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102101.69122401676!2d30.64806473545165!3d36.898054278739394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39aaeddadadc1%3A0x95c69f73f9e32e33!2sAntalya!5e0!3m2!1str!2str!4v1618908363134!5m2!1str!2str" width="" height="" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <section id="Contact" class="sectionadres">
+    
+  
+    
+      <div class="form">
+        
+        <div class="row">
+          <div class="col25">
+            <label for="">Name</label>
+          </div>
+          
+          <div class="col75">
+            <input type="text" placeholder="Your Name Here">
+          </div>
+        </div>
+          <div class="row">
+            <div class="col25">
+              <label for="">Surname</label>
+            </div>
+            
+            <div class="col75">
+              <input type="text" placeholder="Your Surname Here">
+            </div>
+          </div>
+            <div class="row">
+              <div class="col25">
+                <label for="">Message</label>
+              </div>
+              
+              <div class="col75">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message Here"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Submit">
+            </div>
+        
+      </div>
+      
+      
+      <div class="adres">
+        <h2>ADDRESS</h2>
+
+        <span class="span1">
+          Tahılpazarı mh, Şarampol Cd. No:38/105, 07040 Muratpaşa/Antalya
+        </span>
+        <span class="span1">
+          +90 242 241 9595 
+        </span>
+        <span class="span1">
+          infograndantalyahotel@gmail.com
+        </span>
+        <span class="span1">
+          http://www.grandantalyahotel.com/
+        </span>
+      </div>
+    
+  </section>
+</section>
   
   <section id="About">
     <h3>About Us</h3>
@@ -87,6 +158,9 @@
     </div>
   </section>
   
+  
+
+  </section>
 
 
   <footer>All Rights Reserved</footer>
@@ -94,6 +168,7 @@
 
 
 </div>
+
 
 
 </body>
