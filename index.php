@@ -18,18 +18,18 @@
   <div id = "container">
 <div id = "social">
   <font>Hotel Manager</font>
-  <a href="index.html"><i class="fas fa-home"></i>HomePage</a>
-    <a href="gallery.html"><i class="fas fa-images"></i>Gallery</a>
+  <a href="index.php"><i class="fas fa-home"></i>HomePage</a>
+    <a href="gallery.php"><i class="fas fa-images"></i>Gallery</a>
     <a href="#About"> <i class="fas fa-users"></i>About</a>
-    <a href="index.html"> <i class="fas fa-address-book"></i>Contact Us</a>
-    <a href="loginreg.html"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>
+    <a href="#Contact"> <i class="fas fa-address-book"></i>Contact Us</a>
+    <a href="loginreg.php"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>
     <a href="https://www.facebook.com/Grand-Antalya-Hotel-101651651586336/" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.instagram.com/grandantalyahotel/?igshid=mjw9j98ox24r" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://twitter.com/AntalyaGrand" target="_blank"><i class="fab fa-twitter"></i></a>
   
 </div>
  <header>
-   <img id="headerpic" src="img/header.jpg" alt="">
+   <img id="headerpic" src="img/hotelheader.jpg" alt="">
  </header>
 
  

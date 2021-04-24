@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" >
   <head>
     <title>Login</title>
     <meta charset="utf-8">
@@ -15,11 +15,11 @@
     <div id = "container">
         <div id = "social">
           <font>Hotel Manager</font>
-          <a href="index.html"><i class="fas fa-home"></i>HomePage</a>
-            <a href="gallery.html"><i class="fas fa-images"></i>Gallery</a>
-            <a href="#About"> <i class="fas fa-users"></i>About</a>
-            <a href="index.html"> <i class="fas fa-address-book"></i>Contact Us</a>
-            <a href="loginreg.html"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>
+          <a href="index.php"><i class="fas fa-home"></i>HomePage</a>
+            <a href="gallery.php"><i class="fas fa-images"></i>Gallery</a>
+            <a href="/Hotel/index.php#About"> <i class="fas fa-users"></i>About</a>
+            <a href="/Hotel/index.php#Contact"> <i class="fas fa-address-book"></i>Contact Us</a>
+            <a href="loginreg.php"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>
           <a href="https://www.facebook.com/Grand-Antalya-Hotel-101651651586336/" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/grandantalyahotel/?igshid=mjw9j98ox24r" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/AntalyaGrand" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -44,7 +44,7 @@ Signup Form</div>
 </div>
 </div>
 <div class="form-inner">
-          <form id="loginform" action="admin.html" method="POST" class="login">
+          <form id="loginform" action="admin.php" method="GET" class="login">
             <div class="field">
               <input id="loginemail" type="text" placeholder="Email Address" required>
             </div>
@@ -61,7 +61,7 @@ Signup Form</div>
 <div class="signup-link">
 Not a member? <a href="">Signup now</a></div>
 </form>
-<form id="signupform" action="index.html" method="POST" class="signup">
+<form id="signupform" action="index.php" method="GET" class="signup">
             <div class="field">
               <input id="signupemail" type="text" placeholder="Email Address" required>
             </div>
