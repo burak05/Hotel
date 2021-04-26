@@ -4,13 +4,23 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://tatilsepeti.cubecdn.net/Files/Images/Tesis/04412/1050X700/tsr04412637249689728363448.jpg" class="d-block w-100" alt="...">
+                <img src="https://tatilsepeti.cubecdn.net/Files/Images/Tesis/04412/1050X700/tsr04412637249689728363448.jpg" class="d-block w-100" height="600px" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.luxuryescapes.com%2Flux-group%2Fimage%2Fupload%2Fq_auto%3Aeco%2Cc_fill%2Cg_auto%2Car_16%3A9%2Fvm03ot3lf22j7npwow8pe.jpeg&f=1&nofb=1" class="d-block w-100" alt="...">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.luxuryescapes.com%2Flux-group%2Fimage%2Fupload%2Fq_auto%3Aeco%2Cc_fill%2Cg_auto%2Car_16%3A9%2Fvm03ot3lf22j7npwow8pe.jpeg&f=1&nofb=1" class="d-block w-100" height="600px" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://tatilsepeti.cubecdn.net/Files/Images/Tesis/04412/1050X700/tsr04412637249689728363448.jpg" class="d-block w-100" alt="...">
+                <img src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" height="600px" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" height="600px" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/pexels-photo-2507007.jpeg" class="d-block w-100" height="600px" alt="...">
+            </div>
+            
+            <div class="carousel-item">
+                <img src="img/pexels-photo-2506988.jpeg" class="d-block w-100" height="600px" alt="...">
             </div>
             <!--https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg-->
         </div>
