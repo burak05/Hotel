@@ -5,8 +5,7 @@
       <div class="title-text">
         <div class="title login">
 Login Form</div>
-<div class="title signup">
-Signup Form</div>
+<div class="title signup">Signup Form</div>
 </div>
 <div class="form-container">
         <div class="slide-controls">
@@ -18,7 +17,7 @@ Signup Form</div>
 </div>
 </div>
 <div class="form-inner">
-          <form id="loginform" action="admin.php" method="POST" class="login">
+          <form id="loginform" action="validation.php" method="POST" class="login">
             <div class="field">
               <input id="loginemail" type="text" placeholder="Email Address" name="loginemail" required>
             </div>
@@ -75,7 +74,7 @@ Not a member? <a href="">Signup now</a></div>
         signupBtn.click();
         return false;
       });
-      
+    /* 
       var loginemail = document.getElementById('loginemail')
       var loginpassword = document.getElementById('loginpassword')
       var signupemail = document.getElementById('signupemail')
@@ -133,9 +132,10 @@ Not a member? <a href="">Signup now</a></div>
 
       })
       
-      
+      */
 
 
     </script>
+    
 
-
+    
