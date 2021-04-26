@@ -96,7 +96,9 @@ Not a member? <a href="">Signup now</a></div>
           alert('Check Your Email');
           e.preventDefault()
         }
-        
+        if(loginemail.value !== "admin@gmail.com"){
+          document.getElementById('loginform').action = 'user.php';
+        }
 
         
         
