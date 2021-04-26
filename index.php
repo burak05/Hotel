@@ -126,7 +126,7 @@
               </div>
               
               <div class="col75">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message Here"></textarea>
+                <textarea name="" id="" cols="30" rows="5" placeholder="Message Here"></textarea>
               </div>
             </div>
             <div class="row">
