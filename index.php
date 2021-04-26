@@ -1,9 +1,32 @@
 <?php include 'header.php'; ?>
+<title>Home</title>
 
-<header>
-   <img id="headerpic" src="img/header.jpg" alt="">
- </header>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://tatilsepeti.cubecdn.net/Files/Images/Tesis/04412/1050X700/tsr04412637249689728363448.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.luxuryescapes.com%2Flux-group%2Fimage%2Fupload%2Fq_auto%3Aeco%2Cc_fill%2Cg_auto%2Car_16%3A9%2Fvm03ot3lf22j7npwow8pe.jpeg&f=1&nofb=1" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://tatilsepeti.cubecdn.net/Files/Images/Tesis/04412/1050X700/tsr04412637249689728363448.jpg" class="d-block w-100" alt="...">
+            </div>
+            <!--https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg-->
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
+
+
+ 
   <section>
     
     
@@ -13,15 +36,30 @@
       
         <form action="#">
           <label for="adults">Adults: </label>
-          <input id="adults" type="text" name="adults">
+          <select id="adults" name="adults" >
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
         
         
           <label for="children">Children: </label>
-          <input id="children" type="text" name="children">
+          <select id="children" name="children" >
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
        
         
           <label for="rooms">Rooms: </label>
-          <input id="children" type="text" name="children">
+          <select id="rooms" name="rooms" >
+  <option value="suit">suit</option>
+  <option value="standart">standart</option>
+  <option value="mid-tier">mid</option>
+  <option value="gold">gold</option>
+</select>
         </form>
       
       
@@ -32,7 +70,7 @@
           <label for="dateout">Check-out Date: </label>
           <input id="dateout" type="date" >
         </form>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Make Reservation">
       
       
       

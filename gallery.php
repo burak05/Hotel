@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-
+<title>Gallery</title>
 
 
  
@@ -39,6 +39,9 @@
       </a>
       <a class="alink" href="img/9.jpg">
           <img src="img/9.jpg" alt="" class="galresim">
+      </a>
+      <a class="alink" href="img/deneme.jpg">
+          <img src="img/deneme.jpg" alt="" class="galresim">
       </a>
       
 

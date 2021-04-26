@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-    
+<title>Login</title>  
     
   <div class="wrapper">
       <div class="title-text">
@@ -18,24 +18,24 @@ Signup Form</div>
 </div>
 </div>
 <div class="form-inner">
-          <form id="loginform" action="admin.php" method="GET" class="login">
+          <form id="loginform" action="admin.php" method="POST" class="login">
             <div class="field">
-              <input id="loginemail" type="text" placeholder="Email Address" required>
+              <input id="loginemail" type="text" placeholder="Email Address" name="loginemail" required>
             </div>
 <div class="field">
-              <input id="loginpassword" type="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              <input id="loginpassword" type="password" placeholder="Password" name="loginpassword" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             </div>
 <div class="pass-link">
 <a href="#">Forgot password?</a></div>
 <div class="field btn">
               <div class="btn-layer">
 </div>
-<input id="submit" type="submit" value="Login">
+<input id="submit" type="submit" value="Login" name="loginsubmit">
             </div>
 <div class="signup-link">
 Not a member? <a href="">Signup now</a></div>
 </form>
-<form id="signupform" action="index.php" method="GET" class="signup">
+<form id="signupform" action="index.php" method="POST" class="signup">
             <div class="field">
               <input id="signupemail" type="text" placeholder="Email Address" required>
             </div>
@@ -48,7 +48,7 @@ Not a member? <a href="">Signup now</a></div>
 <div class="field btn">
               <div class="btn-layer">
 </div>
-<input id="submit" type="submit" value="Signup">
+<input id="submit" type="submit" value="Signup" name="signupsubmit">
             </div>
 </form>
 </div>
@@ -135,4 +135,5 @@ Not a member? <a href="">Signup now</a></div>
 
 
     </script>
+
 
