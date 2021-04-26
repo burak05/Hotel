@@ -5,17 +5,15 @@
       # code...
       $loginemail = $_POST['loginemail'];
       $loginpassword = $_POST['loginpassword'];
-      if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)) {
+      if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/",$loginpassword)) {
         //Valid email!
-        if ($loginemail == "keskin@gmail.com" && $loginpassword == "Keskin05") {
-            # code...
-            echo "<script>window.location.href='user.php';</script>";
-          
-          }
+        
           if ($loginemail == "admin@gmail.com" && $loginpassword == "Keskin05") {
             # code...
             echo "<script>window.location.href='admin.php';</script>";
           
+          }else{
+            echo "<script>window.location.href='user.php';</script>";
           }
    }else{
     echo '<script language="javascript">';
