@@ -1,4 +1,10 @@
 <?php include 'header.php'; ?>
+<?php
+if (isset($_POST['reservationsubmit'])) {
+  header("Location: reservation.php");
+  # code...
+}
+?>
 <title>Home</title>
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -44,7 +50,7 @@
     <main>
 
       
-        <form action="#">
+        <form action="reservation.php" method="POST">
           <label for="adults">Adults: </label>
           <select id="adults" name="adults" >
   <option value="1">1</option>
@@ -65,22 +71,26 @@
         
           <label for="rooms">Rooms: </label>
           <select id="rooms" name="rooms" >
-  <option value="suit">suit</option>
-  <option value="standart">standart</option>
-  <option value="mid-tier">mid</option>
-  <option value="gold">gold</option>
+          <option value="standart">standart</option>
+          <option value="mid-tier">mid</option>
+          <option value="suit">suit</option>
+          <option value="gold">gold</option>
+  
+  
+  
 </select>
-        </form>
+        
       
       
-        <form action="#">
+        
           <label for="datein">Check-in Date: </label>
           <input id="datein" type="date" name="datein" >
         
           <label for="dateout">Check-out Date: </label>
           <input id="dateout" type="date" >
+          <input name = "reservationsubmit" type="submit" value="Make Reservation">
         </form>
-        <input type="submit" value="Make Reservation">
+        
       
       
       

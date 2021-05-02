@@ -93,3 +93,35 @@
       margin-left: -15rem;
     }
   }
+  .icerik{
+    
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    margin-right: 15px;
+    margin: 10px;
+  }
+  .btnDevam:link{
+    display: block;
+    width: 150px;
+    height: 45px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+  }
+  
+  .rsm{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .icerikText{
+    margin: 10px;
+    color: dimgray;
+  }
+  h5{
+    margin: 10px;
+    color: dimgray;
+  }
