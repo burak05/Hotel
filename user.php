@@ -1,7 +1,15 @@
 <?php 
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
+if(!isset($_SESSION['loginemail']))
+{
+    echo '<script language="javascript">';
+    echo 'alert("not authorized")';
+    echo '</script>';
+header("location:auth.php");
 
+exit();
+}
 
 session_commit();
 ?>
