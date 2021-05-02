@@ -125,3 +125,27 @@
     margin: 10px;
     color: dimgray;
   }
+  .piechart{
+    width: 50%;
+    float: left;
+    height: 380px;
+    border: 1px solid #d8d8d8;
+    padding: 10px;
+  }
+  .chart_div{
+    width: 50%;
+    float: left;
+    height: 380px;
+    border: 1px solid #d8d8d8;
+    padding: 10px;
+  }
+  .sectionchart{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    
+    background-color: #dddddd;
+    opacity: 0.8;
+    padding: 10px;
+    
+  }

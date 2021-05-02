@@ -71,15 +71,17 @@ session_commit();
                     </ul>
                 </div>
             </nav>
-
-            <div class="container-fluid px-4">
+        <section class = "sectionchart">
+        <div class="container-fluid px-4">
                 
 
                 
-                <div id="piechart"></div>
-                <div id="chart_div" ></div>
+                <div class = "piechart" id="piechart"></div>
+                <div class = "chart_div" id="chart_div" ></div>
                 
             </div>
+        </section>
+            
             
             
         </div>
