@@ -1,4 +1,44 @@
-<?php include 'header.php'; ?>
+<?php 
+include 'header.php';
+session_id(md5($_SERVER['REMOTE_ADDR']));
+session_start();
+if (isset($_POST['loginsubmit'])) {
+  # code...
+  $_SESSION['loginemail'] = $_POST["loginemail"];
+  $_SESSION['loginpassword'] = $_POST["loginpassword"];
+  
+    if(filter_var($_SESSION['loginemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/",$_SESSION['loginpassword'])) {
+    //Valid email!
+    
+    
+    
+    if ($_SESSION['loginemail'] === "admin@gmail.com" && $_SESSION['loginpassword'] === "Keskin05") {
+      # code...
+      $_SESSION["customer"] = 1;
+      header("Location: admin.php");
+      
+    }else{
+      $_SESSION["customer"] = 2;
+      header("Location: user.php");
+    }
+    
+    
+    
+    }else{
+echo '<script language="javascript">';
+echo 'alert("wrong email format")';
+echo '</script>';
+echo "<script>window.location.href='loginreg.php';</script>";
+}
+  
+
+
+}
+session_commit();
+
+?>
+
+
 <title>Login</title>  
     
   <div class="wrapper">
@@ -17,7 +57,7 @@ Login Form</div>
 </div>
 </div>
 <div class="form-inner">
-          <form id="loginform" action="validation.php" method="POST" class="login">
+          <form id="loginform" action="loginreg.php" method="POST" class="login">
             <div class="field">
               <input id="loginemail" type="text" placeholder="Email Address" name="loginemail" required>
             </div>

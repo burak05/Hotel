@@ -75,7 +75,7 @@
       
         <form action="#">
           <label for="datein">Check-in Date: </label>
-          <input id="datein" type="date" >
+          <input id="datein" type="date" name="datein" >
         
           <label for="dateout">Check-out Date: </label>
           <input id="dateout" type="date" >

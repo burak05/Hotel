@@ -1,3 +1,10 @@
+<?php 
+session_id(md5($_SERVER['REMOTE_ADDR']));
+session_start();
+
+
+session_commit();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
