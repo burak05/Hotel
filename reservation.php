@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-<title>Home</title>
+<title>Reservation</title>
 
     
 
