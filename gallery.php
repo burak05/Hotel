@@ -37,11 +37,18 @@
       <a class="alink" href="img/8.jpg">
           <img src="img/8.jpg" alt="" class="galresim">
       </a>
-      <a class="alink" href="img/9.jpg">
-          <img src="img/9.jpg" alt="" class="galresim">
-      </a>
+      
       <a class="alink" href="img/deneme.jpg">
           <img src="img/deneme.jpg" alt="" class="galresim">
+      </a>
+      <a class="alink" href="img/deneme.jpg">
+          <img src="img/Standart.jpg" alt="" class="galresim">
+      </a>
+      <a class="alink" href="img/deneme.jpg">
+          <img src="img/Suit.jpg" alt="" class="galresim">
+      </a>
+      <a class="alink" href="img/deneme.jpg">
+          <img src="img/Double.jpg" alt="" class="galresim">
       </a>
       
 

@@ -74,6 +74,7 @@ session_commit();
                                 <i class="fas fa-user me-2"></i><?php echo $_SESSION['loginemail']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="index.php">Home</a></li>
                                 <li><a class="dropdown-item" href="index.php">Profile</a></li>
                                 <li><a class="dropdown-item" href="index.php">Settings</a></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>

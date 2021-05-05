@@ -74,7 +74,7 @@ if (isset($_POST['reservationsubmit'])) {
           <option value="standart">standart</option>
           <option value="mid-tier">mid</option>
           <option value="suit">suit</option>
-          <option value="gold">gold</option>
+          
   
   
   
