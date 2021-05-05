@@ -7,12 +7,12 @@ if (isset($_POST['loginsubmit'])) {
   $_SESSION['loginemail'] = $_POST["loginemail"];
   $_SESSION['loginpassword'] = $_POST["loginpassword"];
   
-    if(filter_var($_SESSION['loginemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/",$_SESSION['loginpassword'])) {
+    if(filter_var($_SESSION['loginemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['loginpassword'])) {
     //Valid email!
     
     
     
-    if ($_SESSION['loginemail'] === "admin@gmail.com" && $_SESSION['loginpassword'] === "Keskin05") {
+    if ($_SESSION['loginemail'] === "admin@gmail.com" ) {
       # code...
       $_SESSION["customer"] = 1;
       header("Location: admin.php");
@@ -20,6 +20,39 @@ if (isset($_POST['loginsubmit'])) {
     }else{
       $_SESSION["customer"] = 2;
       header("Location: user.php");
+    }
+    
+    
+    
+    }else{
+echo '<script language="javascript">';
+echo 'alert("wrong email format")';
+echo '</script>';
+echo "<script>window.location.href='loginreg.php';</script>";
+}
+  
+
+
+}
+if (isset($_POST['signupsubmit'])) {
+  # code...
+  $_SESSION['signupemail'] = $_POST["signupemail"];
+  $_SESSION['signuppassword'] = $_POST["signuppassword"];
+  $_SESSION['confpassword'] = $_POST["confpassword"];
+  
+    if(filter_var($_SESSION['signupemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['signuppassword'])&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['confpassword'])&&$_SESSION['confpassword']===$_SESSION['signuppassword']) {
+    //Valid email!
+    
+    
+    
+    if ($_SESSION['signupemail'] !== "admin@gmail.com" ) {
+      # code...
+      $_SESSION['loginemail'] = $_SESSION['signupemail'];
+      header("Location: user.php");
+      
+    }else{
+      
+      header("Location: index.php");
     }
     
     
@@ -62,7 +95,7 @@ Login Form</div>
               <input id="loginemail" type="text" placeholder="Email Address" name="loginemail" required>
             </div>
 <div class="field">
-              <input id="loginpassword" type="password" placeholder="Password" name="loginpassword" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              <input id="loginpassword" type="password" placeholder="Password" name="loginpassword" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
             </div>
 <div class="pass-link">
 <a href="#">Forgot password?</a></div>
@@ -74,15 +107,15 @@ Login Form</div>
 <div class="signup-link">
 Not a member? <a href="">Signup now</a></div>
 </form>
-<form id="signupform" action="index.php" method="POST" class="signup">
+<form id="signupform" action="loginreg.php" method="POST" class="signup" name="signupsubmit">
             <div class="field">
-              <input id="signupemail" type="text" placeholder="Email Address" required>
+              <input id="signupemail" type="text" placeholder="Email Address" name="signupemail" required>
             </div>
 <div class="field">
-              <input id="signuppassword" type="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              <input id="signuppassword" type="password" name = "signuppassword" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
             </div>
 <div class="field">
-              <input id="signupconfirmpass" type="password" placeholder="Confirm password" required>
+              <input id="signupconfirmpass" type="password" name="confpassword" placeholder="Confirm password" required>
             </div>
 <div class="field btn">
               <div class="btn-layer">

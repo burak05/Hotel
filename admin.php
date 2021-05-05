@@ -141,43 +141,28 @@ session_commit();
                                     <th scope="row">1</th>
                                     <td>Suit</td>
                                     <td>Jonny</td>
-                                    <td>$1200</td>
+                                    <td>$1000</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>Standart</td>
                                     <td>Kenny</td>
-                                    <td>$750</td>
+                                    <td>$400</td>
                                 </tr>
+                                
+                                
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>Family</td>
-                                    <td>Jenny</td>
-                                    <td>$600</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Apart</td>
-                                    <td>Killy</td>
-                                    <td>$300</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
                                     <td>Suit</td>
                                     <td>Filly</td>
-                                    <td>$1200</td>
+                                    <td>$1000</td>
                                 </tr>
+                                
                                 <tr>
-                                    <th scope="row">6</th>
-                                    <td>Gold</td>
-                                    <td>Bumbo</td>
-                                    <td>$1800</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
+                                    <th scope="row">4</th>
                                     <td>Mid-Tier</td>
                                     <td>Bilbo</td>
-                                    <td>$900</td>
+                                    <td>$600</td>
                                 </tr>
                                 
                             </tbody>
@@ -185,6 +170,41 @@ session_commit();
                     </div>
                     
                 </div>
+                <div class="container">
+<table style="width:100%">
+  <tr>
+    <th>Photo</th>
+    <th>Email</th>
+    <th>Password</th>
+    
+  </tr>
+  <tr>
+    <td><img src="img/user2.jpg" alt="" height = 80px width = 80px></td>
+    <td>keskinburak@gmail.com</td>
+    <td>Amasya94</td>
+    
+  </tr>
+  <tr>
+  <td><img src="img/user3.jpg" alt=""height = 80px width = 80px></td>
+    <td>abcde@gmail.com</td>
+    <td>Furkan28</td>
+    
+  </tr>
+  <tr>
+  <td><img src="img/user1.jpg" alt=""height = 80px width = 80px></td>
+    <td>keskinrahsan@gmail.com</td>
+    <td>Rahsan07</td>
+    
+  </tr>
+  <tr>
+  <td><img src="img/user.jpg" alt=""height = 80px width = 80px></td>
+    <td>veli@gmail.com</td>
+    <td>Veli8154</td>
+    
+  </tr>
+  
+</table>
+            </div>
                 
             </div>
             

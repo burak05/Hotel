@@ -83,10 +83,39 @@ session_commit();
                     </ul>
                 </div>
             </nav>
-
-            <div class="container-fluid px-4">
-            <img src="img/construction.jpg" alt="">
+<section>
+<div class="container">
+<table style="width:100%" title="Test">
+  <tr>
+    <th>Photo</th>
+    <th>Room Typye</th>
+    <th>Days</th>
+    
+  </tr>
+  <tr>
+    <td><img src="img/Standart.jpg" alt="" height = 120px width = 120px></td>
+    <td>Standart</td>
+    <td>7 Days</td>
+    
+  </tr>
+  <tr>
+  <td><img src="img/Double.jpg" alt=""height = 120px width = 120px></td>
+    <td>Mid-Tier</td>
+    <td>10 Days</td>
+    
+  </tr>
+  <tr>
+  <td><img src="img/Suit.jpg" alt=""height = 120px width = 120px></td>
+    <td>Suit</td>
+    <td>20 Days</td>
+    
+  </tr>
+  
+  
+</table>
             </div>
+</section>
+            
         </div>
     </div>
     <!-- /#page-content-wrapper -->

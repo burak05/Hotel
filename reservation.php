@@ -20,7 +20,7 @@
       <img src="img/Standart.jpg" alt="Norway" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Standart Room</h3>
-        <h6 class="w3-opacity">From $300</h6>
+        <h6 class="w3-opacity">From $400</h6>
         <p>Single bed</p>
         <p>15m<sup>2</sup></p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>

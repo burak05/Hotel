@@ -104,6 +104,23 @@ if (isset($_POST['reservationsubmit'])) {
   </section>
 
   <section>
+  <section id="About">
+    <h3>About Us</h3>
+
+    
+
+    <div id="container">
+      <div id="sol">
+        <h5 id="h5sol">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </h5>
+      </div>
+      <div id= "sag">
+        <span>T</span>
+        <p id="psag">he Dark Lord has Nine. But we have One, mightier than they: the White Rider. He has passed through the fire and the abyss, and they shall fear him. We will go where he leads.</p>
+      </div>
+    </div>
+  </section>
   <h1>Contact Us</h1>
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.0572538453316!2d30.70289991502753!3d36.88897857039739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3917f0d854aff%3A0xd6311a6a27601018!2sGrand%20Antalya%20Hotel!5e0!3m2!1str!2str!4v1619069089954!5m2!1str!2str" width="" height="" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   <section id="Contact" class="sectionadres">
@@ -166,23 +183,7 @@ if (isset($_POST['reservationsubmit'])) {
   </section>
 </section>
   
-  <section id="About">
-    <h3>About Us</h3>
-
-    
-
-    <div id="container">
-      <div id="sol">
-        <h5 id="h5sol">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        </h5>
-      </div>
-      <div id= "sag">
-        <span>T</span>
-        <p id="psag">he Dark Lord has Nine. But we have One, mightier than they: the White Rider. He has passed through the fire and the abyss, and they shall fear him. We will go where he leads.</p>
-      </div>
-    </div>
-  </section>
+  
   
   
 
