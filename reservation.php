@@ -17,7 +17,7 @@
         
     <div class="w3-row-padding w3-padding-16">
     <div class="w3-third w3-margin-bottom">
-      <img src="img/Standart.jpg" alt="Norway" style="width:100%">
+      <img src="img/Standart.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Standart Room</h3>
         <h6 class="w3-opacity">From $400</h6>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="w3-third w3-margin-bottom">
-      <img src="img/Double.jpg" alt="Norway" style="width:100%">
+      <img src="img/Double.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Mid-Tier Room</h3>
         <h6 class="w3-opacity">From $600</h6>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="w3-third w3-margin-bottom">
-      <img src="img/Suit.jpg" alt="Norway" style="width:100%">
+      <img src="img/Suit.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Suit Room</h3>
         <h6 class="w3-opacity">From $1000</h6>
