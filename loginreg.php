@@ -117,6 +117,12 @@ Not a member? <a href="">Signup now</a></div>
 <div class="field">
               <input id="signupconfirmpass" type="password" name="confpassword" placeholder="Confirm password" required>
             </div>
+<div class="field">
+              <input id="signupname" type="text" name = "signupname" placeholder="Name" title="Enter your name" required>
+            </div>
+<div class="field">
+              <input id="signupsurname" type="text" name="signupsurname" placeholder="Enter your surname" required>
+            </div>
 <div class="field btn">
               <div class="btn-layer">
 </div>
