@@ -1,4 +1,6 @@
+
 <?php 
+include 'config.php';
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
 if(!isset($_SESSION['loginemail']))
@@ -123,87 +125,45 @@ session_commit();
                         </div>
                     </div>
                 </div>
-
-                <div class="row my-5">
-                    <h3 class="fs-4 mb-3">Recent Orders</h3>
-                    <div class="col">
-                        <table class="table bg-white rounded shadow-sm  table-hover">
-                            <thead>
+                <h3 class="fs-4 mb-3">Users</h3>
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
                                 <tr>
-                                    <th scope="col" width="50">#</th>
-                                    <th scope="col">Room</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Price</th>
+                                    
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Nick</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Suit</td>
-                                    <td>Jonny</td>
-                                    <td>$1000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Standart</td>
-                                    <td>Kenny</td>
-                                    <td>$400</td>
-                                </tr>
-                                
-                                
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Suit</td>
-                                    <td>Filly</td>
-                                    <td>$1000</td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Mid-Tier</td>
-                                    <td>Bilbo</td>
-                                    <td>$600</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                </div>
+<?php
+$result = mysqli_query($conn,"SELECT * FROM userinfo");
+
+
+               
+//Bu değişken içerisine çekilen tabloyu bir döngü ile b isimli dizi içerisine çekiyoruz.
+while ($b=mysqli_fetch_array($result)){
+     
+    //Dizi içerisine giriyoruz ve Tablo içerisinden çekilecek olan tüm sütunları tek tek değişken ierisine atıyoruz.
+    $FirstName = $b['UserFirstName'];
+    $LastName = $b['UserLastName'];
+    $UserEmail = $b['UserEmail'];
+    $UserNick = $b['UserNickName'];
+
+     
+    //Tablonun ikinci satırına denk gelen bu alanda gerekli yerlere bu değişkenleri giriyoruz. 
+    echo "<tr>
+    <td>$FirstName</td>
+    <td>$LastName</td>
+    <td>$UserEmail</td>
+    <td>$UserNick</td>
+</tr>";
+     
+}
+                ?>
+                </table>
                 <div class="container">
-<table style="width:100%">
-  <tr>
-    <th>Photo</th>
-    <th>Email</th>
-    <th>Password</th>
-    
-  </tr>
-  <tr>
-    <td><img src="img/user2.jpg" alt="" height = 80px width = 80px></td>
-    <td>keskinburak@gmail.com</td>
-    <td>Amasya94</td>
-    
-  </tr>
-  <tr>
-  <td><img src="img/user3.jpg" alt=""height = 80px width = 80px></td>
-    <td>abcde@gmail.com</td>
-    <td>Furkan28</td>
-    
-  </tr>
-  <tr>
-  <td><img src="img/user1.jpg" alt=""height = 80px width = 80px></td>
-    <td>keskinrahsan@gmail.com</td>
-    <td>Rahsan07</td>
-    
-  </tr>
-  <tr>
-  <td><img src="img/user.jpg" alt=""height = 80px width = 80px></td>
-    <td>veli@gmail.com</td>
-    <td>Veli8154</td>
-    
-  </tr>
-  
-</table>
+
             </div>
                 
             </div>

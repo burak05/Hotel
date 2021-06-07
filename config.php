@@ -11,16 +11,14 @@ if (!$conn) {
 }
 /*
 $result = mysqli_query($conn,"SELECT * FROM userinfo");
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-<td><?php echo $row["UserFirstName"]; ?></td>
-<td><?php echo $row["UserEmail"]; ?></td>
-<td><?php echo $row["UserLastName"]; ?></td>
-</tr>
-<?php
-$i++;
-}
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "<br> Name: ". $row["UserFirstName"]. " - Surname: ". $row["UserLastName"]. " User email:  " . $row["UserEmail"] . "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
 */
+
 ?>
