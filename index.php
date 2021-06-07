@@ -1,8 +1,42 @@
-<?php include 'header.php'; ?>
+<?php 
+include 'header.php';
+include 'config.php';
+
+?>
 <?php
 if (isset($_POST['reservationsubmit'])) {
-  header("Location: reservation.php");
+  
   # code...
+  $adults = $_POST['adults'];
+$children = $_POST['children'];
+$rooms = $_POST['rooms'];
+$datein = $_POST['datein'];
+$dateout = $_POST['dateout'];
+$restype = 1;
+$roomID = 1;
+if($rooms == "standart"){
+  $restype = 1;
+  $roomID = 1;
+}
+if($rooms == "mid-tier"){
+  $restype = 2;
+  $roomID = 2;
+}
+if($rooms == "suit"){
+  $restype = 3;
+  $roomID = 3;
+}
+
+$test = "SELECT RoomID FROM room ORDER BY RoomID DESC LIMIT 1";
+$test2 = "UPDATE room SET UserID1=3 WHERE RoomID = $test";
+mysqli_query($conn, $test2);
+$query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,CheckOut,RoomID1) 
+  			  VALUES('$adults', '$children', '$restype','$datein','$dateout','$roomID')";
+  	mysqli_query($conn, $query);
+  	
+
+
+    header("Location: reservation.php");
 }
 ?>
 <title>Home</title>
@@ -50,7 +84,7 @@ if (isset($_POST['reservationsubmit'])) {
     <main>
 
       
-        <form action="reservation.php" method="POST">
+        <form action="index.php" method="POST">
           <label for="adults">Adults: </label>
           <select id="adults" name="adults" >
   <option value="1">1</option>
@@ -87,7 +121,7 @@ if (isset($_POST['reservationsubmit'])) {
           <input id="datein" type="date" name="datein" >
         
           <label for="dateout">Check-out Date: </label>
-          <input id="dateout" type="date" >
+          <input id="dateout" type="date" name="dateout" >
           <input name = "reservationsubmit" type="submit" value="Make Reservation">
         </form>
         
