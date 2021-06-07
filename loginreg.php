@@ -1,17 +1,27 @@
 <?php 
 include 'header.php';
+include 'config.php';
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
 if (isset($_POST['loginsubmit'])) {
   # code...
-  $_SESSION['loginemail'] = $_POST["loginemail"];
-  $_SESSION['loginpassword'] = $_POST["loginpassword"];
+  $loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
+  $loginpassword = mysqli_real_escape_string($conn, $_POST['loginpassword']);
   
-    if(filter_var($_SESSION['loginemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['loginpassword'])) {
+  
+    if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$loginpassword)) {
     //Valid email!
     
-    
-    
+    $query = "SELECT * FROM userinfo WHERE UserEmail='$loginemail' AND UserPassword='$loginpassword'";
+  	$results = mysqli_query($conn, $query);
+    if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['loginemail'] = $loginemail;
+      $_SESSION['loginpassword'] = $loginpassword;
+  	  header('location: index.php');
+  	}else {
+  		array_push($errors, "Wrong username/password combination");
+  	}
+
     if ($_SESSION['loginemail'] === "admin@gmail.com" ) {
       # code...
       $_SESSION["customer"] = 1;
@@ -36,24 +46,54 @@ echo "<script>window.location.href='loginreg.php';</script>";
 }
 if (isset($_POST['signupsubmit'])) {
   # code...
-  $_SESSION['signupemail'] = $_POST["signupemail"];
-  $_SESSION['signuppassword'] = $_POST["signuppassword"];
-  $_SESSION['confpassword'] = $_POST["confpassword"];
+  $signupusername = mysqli_real_escape_string($conn, $_POST['signupname']);
+  $signupusersurname = mysqli_real_escape_string($conn, $_POST['signupsurname']);
+  $signupemail = mysqli_real_escape_string($conn, $_POST['signupemail']);
+  $signuppassword = mysqli_real_escape_string($conn, $_POST['signuppassword']);
+  $signupconfpassword = mysqli_real_escape_string($conn, $_POST['confpassword']);
+  $nickname = mysqli_real_escape_string($conn, $_POST['nickname']);
+  $errors = array(); 
   
-    if(filter_var($_SESSION['signupemail'], FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['signuppassword'])&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$_SESSION['confpassword'])&&$_SESSION['confpassword']===$_SESSION['signuppassword']) {
-    //Valid email!
+  
+  
+    if(filter_var($signupemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$signuppassword)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$signupconfpassword)&&$signupconfpassword===$signuppassword) {
     
+     /* if (empty($username)) { array_push($errors, "Username is required"); }
+      if (empty($email)) { array_push($errors, "Email is required"); }
+      if (empty($password_1)) { array_push($errors, "Password is required"); }
+      if ($password_1 != $password_2) {
+      array_push($errors, "The two passwords do not match");
+      }
+    */
+      //Valid email!
+    $user_check_query = "SELECT * FROM userinfo WHERE UserFirstName='$signupusername' OR UserEmail='$signupemail' LIMIT 1";
+  $result = mysqli_query($conn, $user_check_query);
+  $user = mysqli_fetch_assoc($result);
+  if ($user) { // if user exists
+      if ($user['UserFirstName'] === $signupusername) {
+        array_push($errors, "Username already exists");
+      }
+  
+      if ($user['UserEmail'] === $signupemail) {
+        array_push($errors, "email already exists");
+      }
+    }
     
-    
-    if ($_SESSION['signupemail'] !== "admin@gmail.com" ) {
+      $query = "INSERT INTO userinfo (UserFirstName,UserLastName, UserEmail, UserPassword,UserNickName,UserPic) 
+  			  VALUES('$signupusername', '$signupusersurname', '$signupemail','$signuppassword','$nickname','')";
+  	mysqli_query($conn, $query);
+    if ($signupemail !== "admin@gmail.com" ) {
       # code...
-      $_SESSION['loginemail'] = $_SESSION['signupemail'];
+      $_SESSION['loginemail'] = $signupemail;
       header("Location: user.php");
       
     }else{
       
       header("Location: index.php");
     }
+    
+    
+    
     
     
     
@@ -108,6 +148,12 @@ Login Form</div>
 Not a member? <a href="">Signup now</a></div>
 </form>
 <form id="signupform" action="loginreg.php" method="POST" class="signup" name="signupsubmit">
+<div class="field">
+              <input id="signupname" type="text" name = "signupname" placeholder="Name" title="Enter your name" required>
+            </div>
+<div class="field">
+              <input id="signupsurname" type="text" name="signupsurname" placeholder="Surname" required>
+            </div>
             <div class="field">
               <input id="signupemail" type="text" placeholder="Email Address" name="signupemail" required>
             </div>
@@ -117,12 +163,10 @@ Not a member? <a href="">Signup now</a></div>
 <div class="field">
               <input id="signupconfirmpass" type="password" name="confpassword" placeholder="Confirm password" required>
             </div>
-<div class="field">
-              <input id="signupname" type="text" name = "signupname" placeholder="Name" title="Enter your name" required>
+            <div class="field">
+              <input id="nickname" type="text" name="nickname" placeholder="Nickname" required>
             </div>
-<div class="field">
-              <input id="signupsurname" type="text" name="signupsurname" placeholder="Enter your surname" required>
-            </div>
+
 <div class="field btn">
               <div class="btn-layer">
 </div>
@@ -161,7 +205,6 @@ Not a member? <a href="">Signup now</a></div>
       var signupconfirmpass = document.getElementById('signupconfirmpass')
       var loginform = document.getElementById('loginform')
       var signupform = document.getElementById('signupform')
-
       loginform.addEventListener('submit', (e) =>{
         let messages = []
         if (!loginpassword.value.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)) {
@@ -177,12 +220,8 @@ Not a member? <a href="">Signup now</a></div>
         if(loginemail.value !== "admin@gmail.com"){
           document.getElementById('loginform').action = 'user.php';
         }
-
         
         
-
-
-
       })
       signupform.addEventListener('submit', (e) =>{
         let messages = []
@@ -201,20 +240,13 @@ Not a member? <a href="">Signup now</a></div>
           alert('Check Your Email');
           e.preventDefault()
         }
-
-        
-
         
         
-
-
-
+        
       })
       
       */
 
 
     </script>
-    
-
     
