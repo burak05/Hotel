@@ -10,7 +10,7 @@ header("location:auth.php");
 
 exit();
 }
-
+#$GLOBALS['burak'] = $_SESSION['loginemail'];
 session_commit();
 ?>
 

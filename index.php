@@ -1,7 +1,8 @@
 <?php 
 include 'header.php';
 include 'config.php';
-
+session_id(md5($_SERVER['REMOTE_ADDR']));
+session_start();
 ?>
 <?php
 if (isset($_POST['reservationsubmit'])) {
@@ -43,13 +44,13 @@ $query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,C
 <?php
 
 if(isset($_POST['SupportSubmit'])){
-  $UserID = "$_SESSION['UserID']";
+  #$_SESSION['UserID']= ;
+  #$UserID = $_SESSION['UserID'];
   $SupName = $_POST['SupportName'];
   $SupSurname = $_POST['SupportSurname'];
   $Supmsg = mysqli_real_escape_string($conn,$_POST['SupportMsg']);
-  
-
-  $supportmsg = "INSERT INTO support (SupportMessage) VALUES('$Supmsg')";
+  $result = "SELECT UserID FROM userinfo WHERE UserEmail = '" . $_SESSION['loginemail'] . "')";
+  $supportmsg = "INSERT INTO support (SupportMessage,UserID) VALUES('$Supmsg','$result')";
   mysqli_query($conn, $supportmsg);
   header("Location: index.php");
 

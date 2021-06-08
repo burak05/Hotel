@@ -3,7 +3,7 @@ $server = "localhost";
 $user = "root";
 $pass = "";
 $database = "hotel";
-
+#session_start();
 $conn = mysqli_connect($server, $user, $pass, $database);
 #$_SESSION['UserID'] = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
 if (!$conn) {

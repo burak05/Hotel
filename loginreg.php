@@ -4,13 +4,15 @@ include 'header.php';
 include 'config.php';
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
+#$loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
+
 if (isset($_POST['loginsubmit'])) {
   # code...
-  $_SESSION['UserID'] = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
+  
   $loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
   $loginpassword = mysqli_real_escape_string($conn, $_POST['loginpassword']);
   
-  
+
     if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$loginpassword)) {
     //Valid email!
     

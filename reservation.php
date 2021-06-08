@@ -1,5 +1,6 @@
 <?php include 'header.php';
 include 'config.php';
+#session_start();
 $loginemail= $_SESSION['loginemail'];
 $userid = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
 if(isset($_POST['StandartRoom'])){
