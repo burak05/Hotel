@@ -39,6 +39,25 @@ $query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,C
     header("Location: reservation.php");
 }
 ?>
+
+<?php
+
+if(isset($_POST['SupportSubmit'])){
+  $UserID = "$_SESSION['UserID']";
+  $SupName = $_POST['SupportName'];
+  $SupSurname = $_POST['SupportSurname'];
+  $Supmsg = mysqli_real_escape_string($conn,$_POST['SupportMsg']);
+  
+
+  $supportmsg = "INSERT INTO support (SupportMessage) VALUES('$Supmsg')";
+  mysqli_query($conn, $supportmsg);
+  header("Location: index.php");
+
+
+}
+
+
+?>
 <title>Home</title>
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -161,15 +180,15 @@ $query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,C
     
   
     
-      <div class="form">
-        
+      <div class="form" >
+      <form action="index.php" method="POST">
         <div class="row">
           <div class="col25">
             <label for="">Name</label>
           </div>
           
           <div class="col75">
-            <input type="text" placeholder="Your Name Here">
+            <input type="text" name="SupportName" placeholder="Your Name Here">
           </div>
         </div>
           <div class="row">
@@ -178,7 +197,7 @@ $query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,C
             </div>
             
             <div class="col75">
-              <input type="text" placeholder="Your Surname Here">
+              <input type="text" name="SupportSurname" placeholder="Your Surname Here">
             </div>
           </div>
             <div class="row">
@@ -187,13 +206,13 @@ $query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,C
               </div>
               
               <div class="col75">
-                <textarea name="" id="" cols="30" rows="5" placeholder="Message Here"></textarea>
+                <textarea name="SupportMsg" id="" cols="30" rows="5" placeholder="Message Here"></textarea>
               </div>
             </div>
             <div class="row">
-              <input type="submit" value="Submit">
+              <input type="submit" name= "SupportSubmit" value="Submit">
             </div>
-        
+            </form>
       </div>
       
       

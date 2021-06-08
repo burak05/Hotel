@@ -6,6 +6,7 @@ session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
 if (isset($_POST['loginsubmit'])) {
   # code...
+  $_SESSION['UserID'] = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
   $loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
   $loginpassword = mysqli_real_escape_string($conn, $_POST['loginpassword']);
   

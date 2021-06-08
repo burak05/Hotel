@@ -5,7 +5,7 @@ $pass = "";
 $database = "hotel";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
-
+#$_SESSION['UserID'] = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
 if (!$conn) {
     die("<script>alert('Connection Failed.')</script>");
 }

@@ -1,7 +1,7 @@
 <?php include 'header.php';
 include 'config.php';
 $loginemail= $_SESSION['loginemail'];
-$userid = "SELECT UserID FROM userinfo WHERE UserEmail = $loginemail";
+$userid = "SELECT UserID FROM userinfo WHERE UserEmail = '$loginemail'";
 if(isset($_POST['StandartRoom'])){
   
   $addstandartroom= "INSERT INTO room (RoomType,RoomPrice,UserID1) VALUES(1,400,'$userid')";
