@@ -140,6 +140,7 @@ session_commit();
 $result = mysqli_query($conn,"SELECT * FROM userinfo");
 
 
+
                
 //Bu değişken içerisine çekilen tabloyu bir döngü ile b isimli dizi içerisine çekiyoruz.
 while ($b=mysqli_fetch_array($result)){
@@ -161,6 +162,53 @@ while ($b=mysqli_fetch_array($result)){
      
 }
                 ?>
+
+<h3 class="fs-4 mb-3">Users</h3>
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
+                                <tr>
+                                    
+                                    <th scope="col">Reservation ID</th>
+                                    <th scope="col">Adults</th>
+                                    <th scope="col">Children</th>
+                                    <th scope="col">CheckOut</th>
+                                    <th scope="col">CheckIN</th>
+                                    <th scope="col">RoomID</th>
+                                </tr>
+                            </thead>
+                            <?php
+$reservation = mysqli_query($conn,"SELECT * FROM reservation");
+
+
+
+
+//Bu değişken içerisine çekilen tabloyu bir döngü ile b isimli dizi içerisine çekiyoruz.
+while ($a=mysqli_fetch_array($reservation)){
+
+    //Dizi içerisine giriyoruz ve Tablo içerisinden çekilecek olan tüm sütunları tek tek değişken ierisine atıyoruz.
+    $ResID = $a['ReservationID'];
+    $Adults = $a['Adults'];
+    $Children = $a['Children'];
+    $CheckIN = $a['CheckIN'];
+    $CheckOut = $a['CheckOut'];
+    $RoomID1 = $a['RoomID1'];
+
+
+
+    //Tablonun ikinci satırına denk gelen bu alanda gerekli yerlere bu değişkenleri giriyoruz. 
+    echo "<tr>
+    <td>$ResID</td>
+    <td>$Adults</td>
+    <td>$Children</td>
+    <td>$CheckIN</td>
+    <td>$CheckOut</td>
+    <td>$RoomID1</td>
+</tr>";
+
+}
+                ?>
+
+
 
                 <div class="container">
 
