@@ -162,8 +162,9 @@ while ($b=mysqli_fetch_array($result)){
      
 }
                 ?>
+                </table>
 
-<h3 class="fs-4 mb-3">Users</h3>
+<h3 class="fs-4 mb-3">Reservations</h3>
                 <table class="table bg-white rounded shadow-sm  table-hover">
                 <thead>
                                 <tr>
@@ -207,6 +208,7 @@ while ($a=mysqli_fetch_array($reservation)){
 
 }
                 ?>
+                </table>
 
 
 
