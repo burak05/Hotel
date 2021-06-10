@@ -1,7 +1,15 @@
 <?php 
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
+if(!isset($_SESSION['loginemail']))
+{
+    echo '<script language="javascript">';
+    echo 'alert("not authorized")';
+    echo '</script>';
+header("location:auth.php");
 
+exit();
+}
 
 session_commit();
 ?>
@@ -33,9 +41,9 @@ session_commit();
                         class="fas fa-paperclip me-2"></i>Reports</a>
                 
                 
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="support.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Customer Support</a>
-                <a href="index.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>

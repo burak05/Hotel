@@ -1,4 +1,3 @@
-
 <?php 
 include 'config.php';
 session_id(md5($_SERVER['REMOTE_ADDR']));
@@ -73,9 +72,9 @@ session_commit();
                                 <i class="fas fa-user me-2"></i><?php echo $_SESSION['loginemail']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="index.php">Home</a></li>
-                                <li><a class="dropdown-item" href="index.php">Settings</a></li>
-                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="index.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -83,61 +82,24 @@ session_commit();
             </nav>
 
             <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">200</h3>
-                                <p class="fs-5">Rooms</p>
-                            </div>
-                            <i class="fas fa-bed fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+                
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">2000</h3>
-                                <p class="fs-5">Reservations</p>
-                            </div>
-                            <i
-                                class="fas fa-hotel fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+                
+            </table>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">2500</h3>
-                                <p class="fs-5">Members</p>
-                            </div>
-                            <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">%25</h3>
-                                <p class="fs-5">Profit</p>
-                            </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="fs-4 mb-3">Users</h3>
+<h3 class="fs-4 mb-3">Support</h3>
                 <table class="table bg-white rounded shadow-sm  table-hover">
                 <thead>
                                 <tr>
                                     
                                     <th scope="col">Name</th>
                                     <th scope="col">Surname</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Nick</th>
+                                    <th scope="col">Message</th>
+                                    
                                 </tr>
                             </thead>
 <?php
-$result = mysqli_query($conn,"SELECT * FROM userinfo");
+$result = mysqli_query($conn,"SELECT * FROM support");
 
 
                
@@ -145,44 +107,26 @@ $result = mysqli_query($conn,"SELECT * FROM userinfo");
 while ($b=mysqli_fetch_array($result)){
      
     //Dizi içerisine giriyoruz ve Tablo içerisinden çekilecek olan tüm sütunları tek tek değişken ierisine atıyoruz.
-    $FirstName = $b['UserFirstName'];
-    $LastName = $b['UserLastName'];
-    $UserEmail = $b['UserEmail'];
-    $UserNick = $b['UserNickName'];
+    $FirstName = $b['SupportName'];
+    $LastName = $b['SupportSurname'];
+    $Supmsg = $b['SupportMessage'];
+    
 
      
     //Tablonun ikinci satırına denk gelen bu alanda gerekli yerlere bu değişkenleri giriyoruz. 
     echo "<tr>
     <td>$FirstName</td>
     <td>$LastName</td>
-    <td>$UserEmail</td>
-    <td>$UserNick</td>
+    <td>$Supmsg</td>
+    
 </tr>";
      
 }
                 ?>
-
-                <div class="container">
-
-            </div>
-                
-            </div>
-            
-        </div>
-        
-    </div>
-    <!-- /#page-content-wrapper -->
+                </table>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
-
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
-    </script>
+  
 </body>
 
 </html>
