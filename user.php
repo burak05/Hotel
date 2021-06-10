@@ -43,7 +43,7 @@ session_commit();
                 
                 
                 
-                <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="supportuser.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Support</a>
                 
                 <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i

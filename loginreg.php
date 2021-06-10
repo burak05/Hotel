@@ -13,7 +13,7 @@ if (isset($_POST['loginsubmit'])) {
   $loginpassword = mysqli_real_escape_string($conn, $_POST['loginpassword']);
   
 
-    if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/",$loginpassword)) {
+    if(filter_var($loginemail, FILTER_VALIDATE_EMAIL)&& preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,16})$/",$loginpassword)) {
     //Valid email!
     
     $query = "SELECT * FROM userinfo WHERE UserEmail='$loginemail' AND UserPassword='$loginpassword'";
