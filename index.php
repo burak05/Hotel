@@ -167,12 +167,13 @@ if(isset($_POST['SupportSubmit'])){
     <div id="container">
       <div id="sol">
         <h5 id="h5sol">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        The chic, new, Grand Antalya Hotel treats business and leisure travelers to ultra-modern conveniences and boutique décor in the city neighbourhood. Just steps from some of Antalya’s most popular attractions.
         </h5>
       </div>
       <div id= "sag">
         <span>T</span>
-        <p id="psag">he Dark Lord has Nine. But we have One, mightier than they: the White Rider. He has passed through the fire and the abyss, and they shall fear him. We will go where he leads.</p>
+        <p id="psag">he chic, new, Grand Antalya Hotel treats business and leisure travelers to ultra-modern conveniences and boutique décor in the city neighbourhood. Just steps from some of Antalya’s most popular attractions.
+</p>
       </div>
     </div>
   </section>
