@@ -35,7 +35,7 @@ if(isset($_POST['StandartRoom'])){
       <img src="img/Standart.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Standart Room 1</h3>
-        <h6 class="w3-opacity">From $40</h6>
+        <h6 class="w3-opacity">From $400</h6>
         <p>Single bed</p>
         <p>15m<sup>2</sup></p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
@@ -46,7 +46,7 @@ if(isset($_POST['StandartRoom'])){
       <img src="img/Double.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Mid-Tier Room</h3>
-        <h6 class="w3-opacity">From $60</h6>
+        <h6 class="w3-opacity">From $600</h6>
         <p>Double-size bed</p>
         <p>25m<sup>2</sup></p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
@@ -57,7 +57,7 @@ if(isset($_POST['StandartRoom'])){
       <img src="img/Suit.jpg" alt="" style="width:100%">
       <div class="w3-container w3-white">
         <h3>Suit Room</h3>
-        <h6 class="w3-opacity">From $100</h6>
+        <h6 class="w3-opacity">From $1000</h6>
         <p>2 Double-size bed</p>
         <p>2*25m<sup>2</sup></p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>

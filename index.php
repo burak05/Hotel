@@ -49,8 +49,8 @@ if(isset($_POST['SupportSubmit'])){
   $SupName = $_POST['SupportName'];
   $SupSurname = $_POST['SupportSurname'];
   $Supmsg = mysqli_real_escape_string($conn,$_POST['SupportMsg']);
-  $result = "SELECT UserID FROM userinfo WHERE UserEmail = '" . $_SESSION['loginemail'] . "')";
-  $supportmsg = "INSERT INTO support (SupportMessage,UserID) VALUES('$Supmsg','$result')";
+  #$result = "SELECT UserID FROM userinfo WHERE UserEmail = '" . $_SESSION['loginemail'] . "')";
+  $supportmsg = "INSERT INTO support (SupportName,SupportSurname,SupportMessage) VALUES('$SupName','$SupSurname','$Supmsg')";
   mysqli_query($conn, $supportmsg);
   header("Location: index.php");
 
