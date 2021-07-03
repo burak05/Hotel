@@ -1,8 +1,13 @@
 <?php 
 include 'header.php';
 include 'config.php';
-session_id(md5($_SERVER['REMOTE_ADDR']));
+#session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
+echo $_SESSION['loginemail'];
+#$bura = $_SESSION['loginemail']
+#$res =  mysqli_query($conn,"SELECT UserID FROM userinfo WHERE UserEmail = $bura)");
+#$burak = mysqli_fetch_array($res);
+#echo $burak;
 ?>
 <?php
 if (isset($_POST['reservationsubmit'])) {
@@ -31,8 +36,8 @@ if($rooms == "suit"){
 $test = "SELECT RoomID FROM room ORDER BY RoomID DESC LIMIT 1";
 $test2 = "UPDATE room SET UserID1=3 WHERE RoomID = $test";
 mysqli_query($conn, $test2);
-$query = "INSERT INTO reservation (Adults,Children, ReservationTypeID, CheckIn,CheckOut,RoomID1) 
-  			  VALUES('$adults', '$children', '$restype','$datein','$dateout','$roomID')";
+$query = "INSERT INTO reservation (UserMail,Adults,Children, ReservationTypeID, CheckIn,CheckOut,RoomID1) 
+  			  VALUES('{$_SESSION['loginemail']}','$adults', '$children', '$restype','$datein','$dateout','$roomID')";
   	mysqli_query($conn, $query);
   	
 
@@ -50,10 +55,11 @@ if(isset($_POST['SupportSubmit'])){
   $SupSurname = $_POST['SupportSurname'];
   $Supmsg = mysqli_real_escape_string($conn,$_POST['SupportMsg']);
   $supmail = $_POST['supmail'];
-  #$result = "SELECT UserID FROM userinfo WHERE UserEmail = '" . $_SESSION['loginemail'] . "')";
-  $supportmsg = "INSERT INTO support (SupportName,SupportSurname,SupportMail,SupportMessage) VALUES('$SupName','$SupSurname','$supmail','$Supmsg')";
-  mysqli_query($conn, $supportmsg);
-  header("Location: index.php");
+  #$result =  mysqli_query($conn,"SELECT UserID FROM userinfo WHERE UserEmail = '{$_SESSION['loginemail']}'");
+  #echo $result-> num_rows;
+  #$supportmsg = "INSERT INTO support (SupportName,SupportSurname,SupportMail,SupportMessage) VALUES('$SupName','$SupSurname','$supmail','$Supmsg')";
+  #mysqli_query($conn, $supportmsg);
+  #header("Location: index.php");
 
 
 }
@@ -184,7 +190,7 @@ if(isset($_POST['SupportSubmit'])){
   
     
       <div class="form" >
-      <form action="index.php" method="POST">
+      <form action="#" method="POST">
         <div class="row">
           <div class="col25">
             <label for="">Name</label>

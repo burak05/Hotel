@@ -2,10 +2,10 @@
 <?php 
 include 'header.php';
 include 'config.php';
-session_id(md5($_SERVER['REMOTE_ADDR']));
+#session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
 #$loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
-
+#$_SESSION['loginemail']="";
 if (isset($_POST['loginsubmit'])) {
   # code...
   
@@ -83,8 +83,8 @@ if (isset($_POST['signupsubmit'])) {
       }
     }
     
-      $query = "INSERT INTO userinfo (UserFirstName,UserLastName, UserEmail, UserPassword,UserNickName,UserPic) 
-  			  VALUES('$signupusername', '$signupusersurname', '$signupemail','$signuppassword','$nickname','')";
+      $query = "INSERT INTO userinfo (UserFirstName,UserLastName, UserEmail, UserPassword,UserNickName) 
+  			  VALUES('$signupusername', '$signupusersurname', '$signupemail','$signuppassword','$nickname')";
   	mysqli_query($conn, $query);
     if ($signupemail !== "admin@gmail.com" ) {
       # code...

@@ -1,10 +1,3 @@
-<?php 
-session_id(md5($_SERVER['REMOTE_ADDR']));
-session_start();
-
-
-session_commit();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +7,7 @@ session_commit();
 <meta name="author" content="Burak Keskin">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
