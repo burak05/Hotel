@@ -2,8 +2,8 @@
 include 'header.php';
 include 'config.php';
 #session_id(md5($_SERVER['REMOTE_ADDR']));
-session_start();
-echo $_SESSION['loginemail'];
+@ session_start();
+#echo @ $_SESSION['loginemail'];
 #$bura = $_SESSION['loginemail']
 #$res =  mysqli_query($conn,"SELECT UserID FROM userinfo WHERE UserEmail = $bura)");
 #$burak = mysqli_fetch_array($res);
@@ -57,9 +57,9 @@ if(isset($_POST['SupportSubmit'])){
   $supmail = $_POST['supmail'];
   #$result =  mysqli_query($conn,"SELECT UserID FROM userinfo WHERE UserEmail = '{$_SESSION['loginemail']}'");
   #echo $result-> num_rows;
-  #$supportmsg = "INSERT INTO support (SupportName,SupportSurname,SupportMail,SupportMessage) VALUES('$SupName','$SupSurname','$supmail','$Supmsg')";
-  #mysqli_query($conn, $supportmsg);
-  #header("Location: index.php");
+  $supportmsg = "INSERT INTO support (SupportName,SupportSurname,SupportMail,SupportMessage) VALUES('$SupName','$SupSurname','$supmail','$Supmsg')";
+  mysqli_query($conn, $supportmsg);
+  header("Location: index.php");
 
 
 }
@@ -190,7 +190,7 @@ if(isset($_POST['SupportSubmit'])){
   
     
       <div class="form" >
-      <form action="#" method="POST">
+      <form action="index.php" method="POST">
         <div class="row">
           <div class="col25">
             <label for="">Name</label>

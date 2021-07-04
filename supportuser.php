@@ -98,7 +98,7 @@ session_commit();
                                 </tr>
                             </thead>
 <?php
-$result = mysqli_query($conn,"SELECT * FROM support WHERE SupportMail = '" . $_SESSION['loginemail'] . "' ");
+$result = mysqli_query($conn,"SELECT * FROM support WHERE SupportMail = '{$_SESSION['loginemail']}' ");
 
 
                

@@ -3,7 +3,7 @@
 include 'header.php';
 include 'config.php';
 #session_id(md5($_SERVER['REMOTE_ADDR']));
-session_start();
+@ session_start();
 #$loginemail = mysqli_real_escape_string($conn, $_POST['loginemail']);
 #$_SESSION['loginemail']="";
 if (isset($_POST['loginsubmit'])) {

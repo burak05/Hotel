@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+session_start();
 
+?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Burak Keskin">
@@ -30,7 +33,12 @@
     <a href="gallery.php"><i class="fas fa-images"></i>Gallery</a>
     <a href="/Hotel/index.php#About"> <i class="fas fa-users"></i>About</a>
     <a href="/Hotel/index.php#Contact"> <i class="fas fa-address-book"></i>Contact Us</a>
-    <a href="loginreg.php"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>
+    <?php if(isset($_SESSION['loginemail'])): ?>
+  <a href="user.php" style="text-decoration:none"><?php echo $_SESSION['loginemail']; ?></a>
+<?php else: ?>
+  <a class="link" href="loginreg.php" style="text-decoration:none">Sign In/Sign Up</a>
+<?php endif; ?>
+    <!--<a href="loginreg.php"> <i class="fas fa-user-alt"></i>Sign In/Sign Up</a>-->
     <a href="https://www.facebook.com/Grand-Antalya-Hotel-101651651586336/" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.instagram.com/grandantalyahotel/?igshid=mjw9j98ox24r" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://twitter.com/AntalyaGrand" target="_blank"><i class="fab fa-twitter"></i></a>

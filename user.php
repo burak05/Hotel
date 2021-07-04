@@ -1,4 +1,5 @@
 <?php 
+include 'config.php';
 session_id(md5($_SERVER['REMOTE_ADDR']));
 session_start();
 if(!isset($_SESSION['loginemail']))
@@ -38,7 +39,7 @@ session_commit();
             <div class="list-group list-group-flush my-3">
                 <a href="user.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="reservation.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-project-diagram me-2"></i>Reservations</a>
                 
                 
@@ -75,8 +76,8 @@ session_commit();
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="index.php">Home</a></li>
-                                <li><a class="dropdown-item" href="index.php">Profile</a></li>
-                                <li><a class="dropdown-item" href="index.php">Settings</a></li>
+                                <li><a class="dropdown-item" href="user.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="user.php">Settings</a></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -85,34 +86,61 @@ session_commit();
             </nav>
 <section>
 <div class="container">
-<table style="width:100%" title="Test">
-  <tr>
-    <th>Photo</th>
-    <th>Room Typye</th>
-    <th>Days</th>
+<h3 class="fs-4 mb-3">Reservations</h3>
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
+                                <tr>
+                                    
+                                    <th scope="col">ResID</th>
+                                    <th scope="col">UserMail</th>
+                                    <th scope="col">Adults</th>
+                                    <th scope="col">Children</th>
+                                    <th scope="col">CheckIn</th>
+                                    <th scope="col">CheckOut</th>
+                                    <th scope="col">RoomID</th>
+                                    <th scope="col">ResTypeID</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+<?php
+$result = mysqli_query($conn,"SELECT * FROM reservation WHERE UserMail = '{$_SESSION['loginemail']}' ORDER BY CheckIN");
+
+
+
+               
+//Bu değişken içerisine çekilen tabloyu bir döngü ile b isimli dizi içerisine çekiyoruz.
+while ($b=mysqli_fetch_array($result)){
+     
+    //Dizi içerisine giriyoruz ve Tablo içerisinden çekilecek olan tüm sütunları tek tek değişken ierisine atıyoruz.
+    $ResID = $b['ReservationID'];
+    $UserMail = $b['UserMail'];
+    $Adults = $b['Adults'];
+    $Children = $b['Children'];
+    $Checkin = $b['CheckIN'];
+    $Checkout = $b['CheckOut'];
+    $RoomID = $b['RoomID1'];
+    $ResTypeID = $b['ReservationTypeID'];
+
+
+     
+    //Tablonun ikinci satırına denk gelen bu alanda gerekli yerlere bu değişkenleri giriyoruz. 
+    echo "<tr>
+    <td>$ResID</td>
+    <td>$UserMail</td>
+    <td>$Adults</td>
+    <td>$Children</td>
+    <td>$Checkin</td>
+    <td>$Checkout</td>
+    <td>$RoomID</td>
+    <td>$ResTypeID</td>
     
-  </tr>
-  <tr>
-    <td><img src="img/Standart.jpg" alt="" height = 120px width = 120px></td>
-    <td>Standart</td>
-    <td>7 Days</td>
     
-  </tr>
-  <tr>
-  <td><img src="img/Double.jpg" alt=""height = 120px width = 120px></td>
-    <td>Mid-Tier</td>
-    <td>10 Days</td>
-    
-  </tr>
-  <tr>
-  <td><img src="img/Suit.jpg" alt=""height = 120px width = 120px></td>
-    <td>Suit</td>
-    <td>20 Days</td>
-    
-  </tr>
-  
-  
-</table>
+</tr>";
+     
+}
+                ?>
+                </table>
             </div>
 </section>
             
