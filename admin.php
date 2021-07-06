@@ -15,6 +15,29 @@ exit();
 
 session_commit();
 ?>
+
+<?php
+
+if(isset($_POST['UpdateSubmit'])){
+    $adults = $_POST['adults'];
+$children = $_POST['children'];
+$resid = $_POST['resID'];
+$datein = $_POST['datein'];
+$dateout = $_POST['dateout'];
+$query = "UPDATE reservation SET Adults = $adults, Children = '$children', CheckIN = '$datein', CheckOut = '$dateout' WHERE ReservationID = '$resid'";
+mysqli_query($conn,$query);
+}
+
+?>
+<?php
+
+if(isset($_POST['DeleteSubmit'])){
+    $resid = $_POST['resID'];    
+$query = "DELETE FROM reservation WHERE ReservationID = '$resid'";
+mysqli_query($conn,$query);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,44 +193,75 @@ while ($b=mysqli_fetch_array($result)){
                                 <tr>
                                     
                                     <th scope="col">Reservation ID</th>
+                                    <th scope="col">UserMail</th>
                                     <th scope="col">Adults</th>
                                     <th scope="col">Children</th>
                                     <th scope="col">CheckOut</th>
                                     <th scope="col">CheckIN</th>
                                     <th scope="col">RoomID</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <?php
-$reservation = mysqli_query($conn,"SELECT * FROM reservation");
+$result = mysqli_query($conn,"SELECT * FROM reservation ORDER BY ReservationID");
 
 
 
-
+               
 //Bu değişken içerisine çekilen tabloyu bir döngü ile b isimli dizi içerisine çekiyoruz.
-while ($a=mysqli_fetch_array($reservation)){
-
+while ($b=mysqli_fetch_array($result)):?>
+     <?php
     //Dizi içerisine giriyoruz ve Tablo içerisinden çekilecek olan tüm sütunları tek tek değişken ierisine atıyoruz.
-    $ResID = $a['ReservationID'];
-    $Adults = $a['Adults'];
-    $Children = $a['Children'];
-    $CheckIN = $a['CheckIN'];
-    $CheckOut = $a['CheckOut'];
-    $RoomID1 = $a['RoomID1'];
-
-
-
-    //Tablonun ikinci satırına denk gelen bu alanda gerekli yerlere bu değişkenleri giriyoruz. 
-    echo "<tr>
-    <td>$ResID</td>
-    <td>$Adults</td>
-    <td>$Children</td>
-    <td>$CheckIN</td>
-    <td>$CheckOut</td>
-    <td>$RoomID1</td>
-</tr>";
-
-}
-                ?>
+    $ResID = $b['ReservationID'];
+    $UserMail = $b['UserMail'];
+    $Adults = $b['Adults'];
+    $Children = $b['Children'];
+    $Checkin = $b['CheckIN'];
+    $Checkout = $b['CheckOut'];
+    $RoomID = $b['RoomID1'];
+    $ResTypeID = $b['ReservationTypeID'];
+    
+    
+     ?>
+    
+    <tr>
+    <form action="admin.php" method="POST">
+    <td><?php echo $ResID;?></td>
+    <td><?php echo $UserMail;?></td>
+    
+    <td>
+    </select>
+        
+        
+        
+        <select id="adults" name="adults"   >
+        <option value='<?php echo $Adults?>' selected='selected'><?php echo $Adults?></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select></td>
+    <td></select>
+        
+        
+        
+        <select id="children" name="children"   >
+        <option value='<?php echo $Children?>' selected='selected'><?php echo $Children?></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select></td>
+    <td><input id="datein" type="date" name="datein" value = <?php echo $Checkin;?>></td>
+    <td><input id="dateout" type="date" name="dateout" value = <?php echo $Checkout;?>></td>
+    <td><?php echo $RoomID;?></td>
+    <td><input name = "UpdateSubmit" type="submit" value="Update"></td>
+    <td><input name = "DeleteSubmit" type="submit" value="Delete"></td>
+    <td><input name = "resID" type="hidden" value=<?php echo $ResID;?>></td>
+    </form>
+    
+</tr><?php endwhile;?>
                 </table>
 
 
