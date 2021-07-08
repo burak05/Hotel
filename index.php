@@ -43,7 +43,8 @@ mysqli_query($conn, $test2);
 $query = "INSERT INTO reservation (UserMail,Adults,Children, ReservationTypeID, CheckIn,CheckOut,RoomID1) 
   			  VALUES('{$_SESSION['loginemail']}','$adults', '$children', '$restype','$datein','$dateout','$roomID')";
   	mysqli_query($conn, $query);
-  	
+$deneme = "UPDATE roomtype SET Quota = Quota -1 WHERE RoomTypeID = $restype";
+mysqli_query($conn,$deneme);
 
     header("Location: checkout.php");
 }
