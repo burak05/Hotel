@@ -37,7 +37,7 @@ session_commit();
             <div class="list-group list-group-flush my-3">
                 <a href="user.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>   
-                        <a href="reservation.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-project-diagram me-2"></i>Reservations</a>        
                 <a href="supportuser.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Customer Support</a>

@@ -38,6 +38,9 @@ mysqli_query($conn,$query);
 }
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +113,7 @@ mysqli_query($conn,$query);
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">200</h3>
+                                <h3 class="fs-2">90</h3>
                                 <p class="fs-5">Rooms</p>
                             </div>
                             <i class="fas fa-bed fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -120,7 +123,8 @@ mysqli_query($conn,$query);
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">2000</h3>
+                                <h3 class="fs-2"><?php $result=mysqli_query($conn,"SELECT count(*) as total from reservation");
+$data=mysqli_fetch_assoc($result); echo $data['total']; ?></h3>
                                 <p class="fs-5">Reservations</p>
                             </div>
                             <i
@@ -131,7 +135,8 @@ mysqli_query($conn,$query);
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">2500</h3>
+                                <h3 class="fs-2"><?php $result=mysqli_query($conn,"SELECT count(*) as total from userinfo");
+$data=mysqli_fetch_assoc($result); echo $data['total']; ?></h3>
                                 <p class="fs-5">Members</p>
                             </div>
                             <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -141,7 +146,13 @@ mysqli_query($conn,$query);
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">%25</h3>
+                                <h3 class="fs-2"><?php $standart=mysqli_query($conn,"SELECT count('RoomID1') as standart from reservation WHERE RoomID1 = 1");
+                                $mid=mysqli_query($conn,"SELECT count('RoomID1') as mid from reservation WHERE RoomID1 = 2");
+                                $suit=mysqli_query($conn,"SELECT count('RoomID1') as suit from reservation WHERE RoomID1 = 3");
+                                $income = 0;
+$standartcount=mysqli_fetch_assoc($standart); $midcount=mysqli_fetch_assoc($mid); $suitcount=mysqli_fetch_assoc($suit); $income = $income + $standartcount['standart']*400 + $midcount['mid']*600 + $suitcount['suit']*1000; echo $income ."$";  
+    
+    ?></h3>
                                 <p class="fs-5">Profit</p>
                             </div>
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>

@@ -30,6 +30,7 @@ session_start();
 <div id = "social">
   <font>Hotel Manager</font>
   <a href="index.php"><i class="fas fa-home"></i>HomePage</a>
+  <a href="reservation.php"><i class="fas fa-key"></i>Rooms</a>
     <a href="gallery.php"><i class="fas fa-images"></i>Gallery</a>
     <a href="/Hotel/index.php#About"> <i class="fas fa-users"></i>About</a>
     <a href="/Hotel/index.php#Contact"> <i class="fas fa-address-book"></i>Contact Us</a>

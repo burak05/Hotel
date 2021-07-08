@@ -29,7 +29,7 @@ if(isset($_POST['StandartRoom'])){
     <main>
 
       
-    <form action="checkout.php" method= "POST">   
+    <form action="index.php" method= "POST">   
     <div class="w3-row-padding w3-padding-16">
     <div class="w3-third w3-margin-bottom">
       <img src="img/Standart.jpg" alt="" style="width:100%">

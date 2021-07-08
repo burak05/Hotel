@@ -20,6 +20,7 @@ $datein = $_POST['datein'];
 $dateout = $_POST['dateout'];
 $restype = 1;
 $roomID = 1;
+
 if($rooms == "standart"){
   $restype = 1;
   $roomID = 1;
@@ -41,8 +42,7 @@ $query = "INSERT INTO reservation (UserMail,Adults,Children, ReservationTypeID, 
   	mysqli_query($conn, $query);
   	
 
-
-    header("Location: reservation.php");
+    header("Location: checkout.php");
 }
 ?>
 
