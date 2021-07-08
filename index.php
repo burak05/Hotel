@@ -20,6 +20,9 @@ $datein = $_POST['datein'];
 $dateout = $_POST['dateout'];
 $restype = 1;
 $roomID = 1;
+if(strtotime($dateout)-strtotime($datein)>1){
+
+
 
 if($rooms == "standart"){
   $restype = 1;
@@ -43,6 +46,13 @@ $query = "INSERT INTO reservation (UserMail,Adults,Children, ReservationTypeID, 
   	
 
     header("Location: checkout.php");
+}
+else{
+  echo '<script language="javascript">';
+echo 'alert("checkout date must me later than check in date")';
+echo '</script>';
+echo "<script>window.location.href='index.php';</script>";
+}
 }
 ?>
 
