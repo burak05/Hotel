@@ -33,7 +33,7 @@ session_commit();
                         class="fas fa-paperclip me-2"></i>Reports</a>
                 
                 
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="support.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Customer Support</a>
                 <a href="index.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
@@ -63,9 +63,9 @@ session_commit();
                                 <i class="fas fa-user me-2"></i><?php echo $_SESSION['loginemail']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="index.php">Logout</a></li>
+                                <li><a class="dropdown-item" href="index.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="index.php">Settings</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>

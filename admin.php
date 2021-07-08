@@ -153,7 +153,7 @@ $data=mysqli_fetch_assoc($result); echo $data['total']; ?></h3>
 $standartcount=mysqli_fetch_assoc($standart); $midcount=mysqli_fetch_assoc($mid); $suitcount=mysqli_fetch_assoc($suit); $income = $income + $standartcount['standart']*400 + $midcount['mid']*600 + $suitcount['suit']*1000; echo $income ."$";  
     
     ?></h3>
-                                <p class="fs-5">Profit</p>
+                                <p class="fs-5">Income</p>
                             </div>
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
